@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "frenezik"
+version = "0.1.1"
+description = "Ridge and Lasso in Python for regression analysis, prediction and variables selection."
+readme = "README.md"
+authors = [{ name="Bengone Akou Lajoie", email="Bengonelajoie@email.com" }]
+requires-python = ">=3.13"
+license = {text = "MIT"}
+dependencies = [
+    "numpy>=2.0.0",
+    "scipy>=1.10.0",
+    "matplotlib>=3.5.0",
+    "pandas>=2.0.0",
+    "scikit-learn>=1.0.0",
+    "seaborn>=0.12.0",
+    "statsmodels>=0.14.0"
+]
+classifiers = [
+    "Intended Audience :: Science/Research",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Topic :: Scientific/Engineering :: Information Analysis",
+    "Operating System :: Microsoft :: Windows"
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]

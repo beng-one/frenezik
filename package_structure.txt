@@ -1,0 +1,126 @@
+
+# """|----- frenezik -----|""" # 
+
+# __ini__.py
+.
+├── __init__
+    └── Residuals
+    └── TargetPredictors
+    └── Regularization
+
+# Residuals.py
+.
+├── Residuals()
+    ├── __init__
+    |	    └── population_size
+    |	    └── random_seed
+    └── Simulation   ==> residuals_simulated
+    |	    └── self.population_size
+    |	    └── self.random_seed
+    |	    └── law="normal"
+    |	    └── law_parameters=None
+    └── Statistics ==> summary_residuals_statistics
+    |	    └── residuals_simulated
+    |	    └── residuals_simulated
+    └── Visualization ==> [histogram, boxplot, qqplot]
+    |	    └── residuals_simulated
+    |	    └── figure
+
+# TargetPredictors.py
+.
+├── TargetPredictors()
+    ├── __init__
+    |	    └── population_size
+    |	    └── true_coefficients
+    └── Simulation ==> data_simulated_population
+    |	    └── self.population_size
+    |	    └── self.true_coefficients
+    |	    └── residuals_simulated
+    └── Sampling ==> data_simulated_sample
+    |	    └── population_simulated
+    |	    └── sample_size
+   |	    └── random_seed
+    └── Visualization_X_y ==> [lineplot, scatterplot, correlation_matrix]
+    |	    └── data_simulated
+    |	    └── figure
+
+# Regularization.py
+.
+├── Regularization()
+    ├── __init__
+    |	    └── predictors
+    |	    └── target
+    |	    └── alpha
+    |	    └── intercept
+    |	    └── random_seed
+    └── Penalized_Regression ==> penalized_coefficients_table, summary_ridge, summary_lasso
+    |	    └── self.predictors
+    |	    └── self.target
+    |	    └── self.alpha
+    |	    └── self.intercept
+    |	    └── self.random_seed
+    |	    └── model
+    └── Visualization_Shrinking ==> [curve]
+    |	    └── penalized_coefficients_table
+    |	    └── variables_selected
+    |	    └── alpha_value_selected
+    |	    └── figure
+    └── Predict ==> [target_predicted, residuals_predicted, residuals_sum_square]
+    |	    └── penalized_coefficients_table
+    |	    └── variables_selected
+    |	    └── alpha
+    |	    └── target
+    |	    └── predictors
+    |	    └── purpose
+    └── Vizualisation_Residuals==> [surface3D, contour_map]
+    |	    └── list_beta_1
+    |	    └── list_beta_2
+    |	    └── penalized_coefficients_table
+    |	    └── predictors
+    |	    └── target
+    |	    └── var_1
+    |	    └── var_2
+    |	    └── intercept
+    |	    └── figure
+    └── gradient_residul_plot ==> data_simulated_coefficients
+    |	    └── data_simulated_coefficients 
+    |	    └── var_1 
+    |	    └── var_2 
+    |	    └── residual 
+    |	    └── model
+
+# utils.py
+.
+├── Visual_Identity
+    └── fill_violet_color
+    └── edge_orange_color
+.
+├── Check
+    ├── data_size_
+    └── random_seed_
+    └── law_
+    └── law_parameters_
+    └── vector_
+    └── string_
+    ├── true_coefficients_
+    └── dataframe_
+    └── alpha_s_
+    └── intercept_s_
+    └── model_s_
+    └── variable_selected_
+    ├── alpha_value_selected_
+    └── list_beta_
+.
+├── Compute
+    ├── summary ==> [summary_lasso, summary_rigde]
+    |	    └── X_
+    |	    └── y_
+    |	    └── alpha_scalar_
+    |	    └── intercept_
+    |	    └── random_seed_
+    |	    └── model_
+    └── residual_sum_square ==> [rss]
+    |	    └── beta_
+    |	    └── X_
+    |	    └── y_
+    |	    └── intercept_

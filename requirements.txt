@@ -1,0 +1,12 @@
+# Data Manipuation
+numpy
+pandas
+
+# Visualization
+matplotlib
+seaborn
+
+# Mathematics and Regression
+scikit-learn
+scipy
+statsmodels

@@ -1,0 +1,9 @@
+# Exclusion of files and folders
+prune .idea
+prune logo
+prune docs/study
+recursive-exclude src/__pycache__ *
+prune tests/data
+prune test/graphics
+exclude tests/test_r_package/*
+

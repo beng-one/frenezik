@@ -1,0 +1,23 @@
+Metadata-Version: 2.4
+Name: frenezik
+Version: 0.1.0
+Summary: Ridge and Lasso Regression with a simulation approach in Python
+Author-email: Bengone Akou Lajoie <Bengonelajoie@email.com>
+License: MIT
+Classifier: Intended Audience :: Science/Research
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Topic :: Scientific/Engineering :: Information Analysis
+Classifier: Operating System :: Microsoft :: Windows
+Requires-Python: >=3.13
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+Requires-Dist: numpy>=2.0.0
+Requires-Dist: scipy>=1.10.0
+Requires-Dist: matplotlib>=3.5.0
+Requires-Dist: pandas>=2.0.0
+Requires-Dist: scikit-learn>=1.0.0
+Requires-Dist: seaborn>=0.12.0
+Requires-Dist: statsmodels>=0.14.0
+Dynamic: license-file

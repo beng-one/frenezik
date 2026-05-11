@@ -1,0 +1,13 @@
+LICENSE.txt
+README.md
+pyproject.toml
+src/frenezik/__init__.py
+src/frenezik/_regularization.py
+src/frenezik/_residuals.py
+src/frenezik/_target_predictors.py
+src/frenezik/utils.py
+src/frenezik.egg-info/PKG-INFO
+src/frenezik.egg-info/SOURCES.txt
+src/frenezik.egg-info/dependency_links.txt
+src/frenezik.egg-info/requires.txt
+src/frenezik.egg-info/top_level.txt
