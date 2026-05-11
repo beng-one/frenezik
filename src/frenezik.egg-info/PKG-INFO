@@ -1,11 +1,12 @@
 Metadata-Version: 2.4
 Name: frenezik
-Version: 0.1.1
+Version: 0.1.2
 Summary: Ridge and Lasso in Python for regression analysis, prediction and variables selection.
 Author-email: Bengone Akou Lajoie <Bengonelajoie@email.com>
 License: MIT
-Project-URL: Homepage, https://github.com/ton-pseudo/frenezik
-Project-URL: Source Code, https://github.com/ton-pseudo/frenezik
+Project-URL: Homepage, https://github.com/beng-one/frenezik
+Project-URL: Source Code, https://github.com/beng-one/frenezik/tree/main/src
+Project-URL: Bug Tracker, https://github.com/beng-one/frenezik/issues
 Classifier: Intended Audience :: Science/Research
 Classifier: Intended Audience :: Developers
 Classifier: Programming Language :: Python :: 3
