@@ -19,6 +19,7 @@ dependencies = [
     "seaborn>=0.12.0",
     "statsmodels>=0.14.0"
 ]
+
 classifiers = [
     "Intended Audience :: Science/Research",
     "Intended Audience :: Developers",
@@ -28,5 +29,10 @@ classifiers = [
     "Operating System :: Microsoft :: Windows"
 ]
 
+[project.urls]
+"Homepage" = "https://github.com/ton-pseudo/frenezik"
+"Source Code" = "https://github.com/ton-pseudo/frenezik"
+
 [tool.setuptools.packages.find]
 where = ["src"]
+

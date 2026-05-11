@@ -1,9 +1,11 @@
 Metadata-Version: 2.4
 Name: frenezik
-Version: 0.1.0
-Summary: Ridge and Lasso Regression with a simulation approach in Python
+Version: 0.1.1
+Summary: Ridge and Lasso in Python for regression analysis, prediction and variables selection.
 Author-email: Bengone Akou Lajoie <Bengonelajoie@email.com>
 License: MIT
+Project-URL: Homepage, https://github.com/ton-pseudo/frenezik
+Project-URL: Source Code, https://github.com/ton-pseudo/frenezik
 Classifier: Intended Audience :: Science/Research
 Classifier: Intended Audience :: Developers
 Classifier: Programming Language :: Python :: 3
@@ -21,3 +23,159 @@ Requires-Dist: scikit-learn>=1.0.0
 Requires-Dist: seaborn>=0.12.0
 Requires-Dist: statsmodels>=0.14.0
 Dynamic: license-file
+
+
+<img width="200" height="200" alt="590038024-72dde7d8-86bd-41c8-9010-f585e939285a" src="https://github.com/user-attachments/assets/6c655298-ad04-4e84-943d-834a6ace9351" />
+
+-------------------------
+
+### ```Description```
+Frenezik is a Python package that enables the development of Ridge and Lasso regularized regression models. These models can be designed using two approaches. The first approach is known as the simulation approach because it allows for the generation of data from the population and/or sample under study. This approach is suitable for researchers and students whose goal is to gain a deep understanding of Ridge and Lasso models. The second approach uses existing data, that is, non-simulated data.
+
+### ```Application```
+This package provides:
+
+Advanced regression analyses that include estimates of regression coefficients regularized using the LSQR optimization algorithm, significance tests for the coefficients and residual analysis using 3D visualizations for Ridge.
+Variable selection methods based on the notion of shrinkage of penalized coefficients as a function of the penalty parameter alpha.
+Predictions based on machine learning. We can therefore evaluate regularized models by splitting the data into training and test sets. Frenezik is an open-source project that uses and is compatible with the following stacks : NumPy, SciPy, Matplotlib, Seaborn, Pandas, Scikit-Learn, and Statsmodels.
+
+### ```Tutorial```
+
+**Installation frenezik**
+```
+pip install frenezik
+```
+**Import frenezik**
+```
+import frenezik as fk
+```
+**Simulation and visualization Residuals**
+```
+# Population size
+PopulationSize = 500
+
+# Random seed
+RandomSeed = 1980
+
+# Instance of <<Residuals>> class
+Resid = fk.Residuals(population_size=PopulationSize, random_seed=RandomSeed)
+
+# Parameter of Mean
+LawMean = 2.81
+
+# Parameter of Variance
+LawVar = 3.89
+
+# Simulation of residuals
+Residus = Resid.Simulation(law="normal", law_parameters=[LawMean, LawVar])
+
+# Histogram of residuals simulated
+Resid.Visualization(residuals_simulated=Residus, figure='histogram')
+```
+<img width="576" height="435" alt="590086839-0a5591fe-8b61-4449-bdc0-5e5e538cc29d" src="https://github.com/user-attachments/assets/d02189bd-e59d-45b3-bb1a-b29275c342bb" />
+
+**Generation X and y data**
+```
+# True coefficients 
+TrueCoefficients = np.arange(-20, 20, 4.5)
+
+# Generation of X and y data with simulated residuals
+TarPred = fk.TargetPredictors(population_size=PopulationSize, true_coefficients=TrueCoefficients)
+data_population = TarPred.Simulation(residuals_simulated=Residus)
+data_population.head(5)
+```
+<img width="757" height="201" alt="590087986-c5b513f4-2aeb-4b87-8f8e-df16fd3b8059" src="https://github.com/user-attachments/assets/24601414-4342-40df-b034-3104139e0060" />
+
+```
+# Lineplot of generated X and y data
+plt.figure(figsize=(8,6))
+TarPred.Visualization_X_y(data_simulated=data_population, figure='lineplot')
+```
+<img width="665" height="455" alt="590087620-a998f557-c213-46fd-9651-b33641e11692" src="https://github.com/user-attachments/assets/707c026d-2254-4a8a-b41a-60cea9c4a44f" />
+
+**Ridge Regression with ($\alpha = 5$)**
+```
+# penality factor (alpha)
+AlphaValue = 5
+
+# Intercept State
+InterceptState = True
+
+# Instance of <<Regularization>> 
+Regul = fk.Regularization(predictors=Predictors,
+                       target=Target,
+                       alpha=AlphaValue,
+                       intercept=InterceptState,
+                       random_seed=RandomSeed)
+
+# Results of Ridge regression
+ResultsRidge = Regul.Penalized_Regression(model='ridge')
+ResultsRidge
+```
+
+<img width="411" height="329" alt="590088650-465d1b59-2ac2-4797-b594-358a49a7b432" src="https://github.com/user-attachments/assets/91ba9811-ed76-4e88-812a-791be8f3ac18" />
+Notes : The result of Regularization.Penalized_Regression function when alpha is scalar and model is Lasso is not yet available.
+
+
+**Lasso Regularization Path with Lasso instead Ridge fore more shrinkage ($\alpha_{k}$)**
+```
+# Range of penality factor (alpha)
+AlphaList = np.linspace(0, 9, 19)
+
+# Intercept
+InterceptState = True
+
+# Instance of <<regularization>>
+Regul = fk.Regularization(predictors=Predictors,
+                       target=Target,
+                       alpha=AlphaList,
+                       intercept=InterceptState,
+                       random_seed=RandomSeed)
+
+# Summary of penalized coefficients in function of alpha
+SummaryCoefLasso = Regul.Penalized_Regression(model='lasso')
+SummaryCoefLasso
+```
+
+<img width="709" height="364" alt="590089550-017cd3f8-0343-4c43-88b1-ad0de87886f5" src="https://github.com/user-attachments/assets/513f707b-e39f-44e8-87b1-1edc3df4afe5" />
+
+```
+# Regularization path of Lasso model
+Regul.Visualization_Shrinking(penalized_coefficients_table=SummaryCoefLasso,
+                              variables_selected=None, 
+                              alpha_value_selected=None,<img width="582" height="459" alt="download" src="https://github.com/user-attachments/assets/1928380b-f4f4-4df5-bba5-c73b66999673" />
+                              figure='curve')
+```
+<img width="694" height="455" alt="590089670-820b6744-bfa2-48fa-adf9-927f21c196f7" src="https://github.com/user-attachments/assets/38da4278-0a6b-482f-8aa2-104b9783e9c9" />
+
+**Residuals Analysis**
+
+```
+# Contour plot of residuals sum square loss
+Beta1 = np.linspace(-25, 25, 50)
+Beta2 = np.linspace(-25, 25, 50)
+Regul.Visualization_Residuals(list_beta_1=Beta1,
+                        list_beta_2=Beta2,
+                        predictors=Predictors,
+                        target=Target,
+                        penalized_coefficients_table=SummaryCoefLasso,
+                        var_1='X_2',
+                        var_2='X_3',
+                        intercept=0,
+                        figure='contour_map')
+```
+<img width="582" height="459" alt="590090580-45717dfe-ee81-49e6-8cc1-deaa7117effe" src="https://github.com/user-attachments/assets/8bff0989-196c-439b-aa07-0358ae8e5498" />
+
+### ```Bibliography```
+* Hastie, T. (2009). The elements of statistical learning: data mining, inference, and prediction.
+* Cule, E., Vineis, P., & De Iorio, M. (2011). Significance testing in ridge regression for genetic data. BMC bioinformatics, 12(1), 372.
+* van Wieringen, W. N. (2015). Lecture notes on ridge regression. arXiv preprint arXiv:1509.09169.
+
+
+### ```Author```
+If you noticed some issues or you just want to improve the project, it's will be a pleasure for me to discuss with you ☎ :
+
+Frenezik is developped and maintained by : Bengone Akou Lajoie
+Github : beng-one | Email : bengonelajoie@gmail.com
+ATLAS Organization
+Logo_Futurist_Design_ElectronikBlack
