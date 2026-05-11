@@ -162,9 +162,9 @@ class Regularization:
         Parameters:
         ---------
         penalized_coefficients_table --> (pd.DataFrame) : resume of penalized coefficients in function of alpha.
-        variables_selected --> (list, np.ndarray, None) : the pair of variables to select. If figure == 'curve', variable_selected is None.one.
+        variables_selected --> (list, np.ndarray, None) : the pair of variables to select. If figure == 'curve', variable_selected is None.
         figure --> (str) : type de figure wanted among curve.
-        alpha_value_selected ----> (int, str, None) : the value of penaly factor alpha to select. If figure == 'curve', alpha_value_selected is N
+        alpha_value_selected ----> (int, str, None) : the value of penaly factor alpha to select. If figure == 'curve', alpha_value_selected is None.
 
         Output:
         -------
