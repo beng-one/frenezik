@@ -149,7 +149,8 @@ Regul.Visualization_Residuals(list_beta_1=Beta1,
 ### ```Author```
 If you noticed some issues or you just want to improve the project, it's will be a pleasure for me to discuss with you ☎ :
 
-Frenezik is developped and maintained by : Bengone Akou Lajoie
-Github : beng-one | Email : bengonelajoie@gmail.com
-ATLAS Organization
-Logo_Futurist_Design_ElectronikBlack
+> - Frenezik is developped and maintained by : Bengone Akou Lajoie
+> - Github : beng-one | Email : bengonelajoie@gmail.com
+> - ATLAS Organization
+
+<img width="200" height="200" alt="Logo_Futurist_Design_ElectronikBlack" src="https://github.com/user-attachments/assets/e89b8304-17e0-4d1e-b8da-dabafdd758ed" />
