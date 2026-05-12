@@ -88,8 +88,8 @@ ResultsRidge
 ```
 
 <img width="411" height="329" alt="590088650-465d1b59-2ac2-4797-b594-358a49a7b432" src="https://github.com/user-attachments/assets/91ba9811-ed76-4e88-812a-791be8f3ac18" />
-Notes : The result of Regularization.Penalized_Regression function when alpha is scalar and model is Lasso is not yet available.
 
+Notes : The result of Regularization.Penalized_Regression function when alpha is scalar and model is Lasso is not yet available.
 
 **Lasso Regularization Path with Lasso instead Ridge fore more shrinkage ($\alpha_{k}$)**
 ```
