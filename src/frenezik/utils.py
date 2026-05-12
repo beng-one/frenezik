@@ -275,6 +275,7 @@ class Compute:
                     "The value of <<intercept>> is not correct. <<intercept>> must take a value among 'True' or 'False'.")
 
             # summary results of lasso regression
+            print('Notes : The result of Regularization.Penalized_Regression function when alpha is scalar and model is Lasso is not yet available.')
             summary_lasso = pd.DataFrame({
                 'Variables': predictors_names,
                 'Estimators': results_complete,

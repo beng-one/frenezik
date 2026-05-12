@@ -165,6 +165,13 @@ class Residuals:
         # Check of <<figure>>
         Check.string_(obj=figure, name='figure')
 
+        # Statistics of simulated residuals
+        _Count_ = int(residuals_simulated.shape[0])
+        _Mean_ = round(residuals_simulated.mean(), 3)
+        _Variance_ = round(residuals_simulated.var(), 3)
+        _Skewness_ = round(scipy.stats.skew(residuals_simulated), 3)
+        _Kurtosis_ = round(scipy.stats.kurtosis(residuals_simulated), 3)
+
         # Histogram of simulated residuals
         if figure == "histogram":
             sns.histplot(residuals_simulated, stat="density", color=Visual_Identity.fill_violet_color, linestyle='-', edgecolor=Visual_Identity.edge_orange_color, alpha=1)
@@ -173,11 +180,11 @@ class Residuals:
             plt.title(f"Histogram of simulated residuals ")
             plt.text(xmax * (1-0.05),
                      ymax * (1-0.05),
-                     f"$N$={self._Count_}\n"
-                     f" $\\mu$={self._Mean_}\n"
-                     f" $\\sigma^{2}$={self._Variance_}\n"
-                     f" $skewness$={self._Skewness_}\n"
-                     f" $kurtosis$={self._Kurtosis_}",
+                     f"$N$={_Count_}\n"
+                     f" $\\mu$={_Mean_}\n"
+                     f" $\\sigma^{2}$={_Variance_}\n"
+                     f" $skewness$={_Skewness_}\n"
+                     f" $kurtosis$={_Kurtosis_}",
                      ha='right',
                      va='top')
             plt.grid(visible=True, alpha=0.25, linestyle='--')
