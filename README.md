@@ -2,16 +2,26 @@
 <img width="200" height="200" alt="590038024-72dde7d8-86bd-41c8-9010-f585e939285a" src="https://github.com/user-attachments/assets/6c655298-ad04-4e84-943d-834a6ace9351" />
 
 -------------------------
+![python](https://img.shields.io/badge/0.1.3-PyPI-3776AB?style=flat-square&logo=python&logoColor=yellow)
+![python](https://img.shields.io/badge/3.11-Python-3776AB?style=flat-square&logo=python&logoColor=yellow)
+![python](https://img.shields.io/badge/3.12-Python-3776AB?style=flat-square&logo=python&logoColor=yellow)
+![python](https://img.shields.io/badge/3.13-Python-3776AB?style=flat-square&logo=python&logoColor=yellow)
+![python](https://img.shields.io/badge/3.14-Python-3776AB?style=flat-square&logo=python&logoColor=yellow)
+
 
 ### ```Description```
 Frenezik is a Python package that enables the development of Ridge and Lasso regularized regression models. These models can be designed using two approaches. The first approach is known as the simulation approach because it allows for the generation of data from the population and/or sample under study. This approach is suitable for researchers and students whose goal is to gain a deep understanding of Ridge and Lasso models. The second approach uses existing data, that is, non-simulated data.
 
+
 ### ```Application```
 This package provides:
 
-Advanced regression analyses that include estimates of regression coefficients regularized using the LSQR optimization algorithm, significance tests for the coefficients and residual analysis using 3D visualizations for Ridge.
-Variable selection methods based on the notion of shrinkage of penalized coefficients as a function of the penalty parameter alpha.
-Predictions based on machine learning. We can therefore evaluate regularized models by splitting the data into training and test sets. Frenezik is an open-source project that uses and is compatible with the following stacks : NumPy, SciPy, Matplotlib, Seaborn, Pandas, Scikit-Learn, and Statsmodels.
+- Advanced regression analyses that include estimates of regression coefficients regularized using the LSQR optimization algorithm, significance tests for the coefficients and residual analysis using 3D visualizations for Ridge.
+- Variable selection methods based on the notion of shrinkage of penalized coefficients as a function of the penalty parameter alpha.
+- Predictions based on machine learning. We can therefore evaluate regularized models by splitting the data into training and test sets.
+
+Frenezik is an open-source project (MIT LICENCE) that uses and is compatible with the following stacks : NumPy, SciPy, Matplotlib, Seaborn, Pandas, Scikit-Learn, and Statsmodels. 
+Moreover, the results from frenezik were compared with those from the Ridge R library and the scikit-learn.Ridge module which provides only coefficient estimators to ensure greater robustness and reliability.
 
 ### ```Tutorial```
 
@@ -139,6 +149,7 @@ Regul.Visualization_Residuals(list_beta_1=Beta1,
                         figure='contour_map')
 ```
 <img width="582" height="459" alt="590090580-45717dfe-ee81-49e6-8cc1-deaa7117effe" src="https://github.com/user-attachments/assets/8bff0989-196c-439b-aa07-0358ae8e5498" />
+
 
 ### ```Bibliography```
 * Hastie, T. (2009). The elements of statistical learning: data mining, inference, and prediction.
